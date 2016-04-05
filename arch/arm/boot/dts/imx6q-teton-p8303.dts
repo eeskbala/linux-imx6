@@ -1,0 +1,28 @@
+/*
+ * Copyright 2015-2016 Analogue & Micro, Ltd.
+ * Copyright 2012 Freescale Semiconductor, Inc.
+ * Copyright 2011 Linaro Ltd.
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+/dts-v1/;
+
+#include <dt-bindings/interrupt-controller/irq.h>
+#include "imx6q.dtsi"
+
+/ {
+	model = "Analogue & Micro i.MX6 Quad Teton/P8303 Board";
+	compatible = "fsl,imx6q-teton-p8303", "fsl,imx6q";
+};
+
+#include "imx6qdl-teton-p8303.dtsi"
+
+&sound {
+       model = "imx6q-teton-p8303-sgtl5000";
+};

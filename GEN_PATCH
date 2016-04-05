@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Evaluate arguments so variables can be easily overridden
+for i in $*; do
+  eval $i
+done
+
+BASE_BRANCH=${BASE_BRANCH:-amltd/am_imx_3.10.53_1.1.1_ga}
+YOCTO=${YOCTO:-/local/poky-cutting-edge}
+
+git diff ${BASE_BRANCH} --no-renames >${YOCTO}/meta-teton-imx6-p8303/recipes-kernel/linux/linux-boundary-3.10.53/teton-p8303/teton-p8303.patch
+cp -auv arch/arm/configs/teton-p8303_defconfig ${YOCTO}/meta-teton-imx6-p8303/recipes-kernel/linux/linux-boundary-3.10.53/teton-p8303/defconfig
